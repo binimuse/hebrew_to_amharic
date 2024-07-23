@@ -37,14 +37,14 @@ class _AppDrawerState extends State<AppDrawer> {
                 ),
                 child: Column(
                   children: [
-                    buildRow(
-                      title: "Language".tr,
-                      onTap: () {
-                        //  Get.to(AppLanguagePickerDialog());
-                      },
-                      context: context,
-                      icon: FontAwesomeIcons.language,
-                    ),
+                    // buildRow(
+                    //   title: "Language".tr,
+                    //   onTap: () {
+                    //     //  Get.to(AppLanguagePickerDialog());
+                    //   },
+                    //   context: context,
+                    //   icon: FontAwesomeIcons.language,
+                    // ),
                     buildRow(
                       title: "About us".tr,
                       onTap: () {

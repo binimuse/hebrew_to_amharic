@@ -1,13 +1,14 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
+import 'package:hebrew_to_amharic/app/modules/history_page/views/history_page_view.dart';
 import 'package:hebrew_to_amharic/app/modules/home/views/home_view.dart';
+import 'package:hebrew_to_amharic/app/modules/saved_page/views/saved_page_view.dart';
 
 class MainPageController extends GetxController {
   List<Widget> pages = [
     HomeView(),
-    SizedBox(),
-    SizedBox(),
-    SizedBox(),
+    SavedPageView(),
+    HistoryPageView(),
   ];
 
   final count = 0.obs;
