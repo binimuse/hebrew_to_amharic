@@ -4,6 +4,7 @@ import 'package:hebrew_to_amharic/app/common/app_drawer.dart';
 import 'package:hebrew_to_amharic/app/config/app_colors.dart';
 import 'package:hebrew_to_amharic/app/config/app_sizes.dart';
 import 'package:hebrew_to_amharic/app/config/app_theme.dart';
+import 'package:hebrew_to_amharic/app/routes/app_pages.dart';
 import 'package:hebrew_to_amharic/app/services/constants.dart';
 import '../controllers/home_controller.dart';
 
@@ -87,30 +88,36 @@ class _HomeViewState extends State<HomeView> {
             child: ListView.builder(
               itemCount: 10, // Replace with the actual number of items
               itemBuilder: (context, index) {
-                return Card(
-                  shadowColor: Colors.white.withOpacity(0.1),
-                  color: Colors.white,
-                  margin: const EdgeInsets.symmetric(
-                      horizontal: 16.0, vertical: 8.0),
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.sunny,
-                      color: AppColors.primary,
-                    ),
-                    title: Text('Word $index',
-                        style: AppTypography.poppins10W400.copyWith(
-                          fontSize: AppSizes.font_16,
-                          color: AppColors.grayDark,
-                          fontWeight: FontWeight.bold,
-                        )),
-                    trailing: IconButton(
-                      icon: Icon(
-                        Icons.bookmark_border,
-                        size: AppSizes.font_18,
+                return GestureDetector(
+                  onTap: () {
+                    Get.toNamed(Routes.DETAIL_PAGE);
+                    // Handle word detail navigation
+                  },
+                  child: Card(
+                    shadowColor: Colors.white.withOpacity(0.1),
+                    color: Colors.white,
+                    margin: const EdgeInsets.symmetric(
+                        horizontal: 16.0, vertical: 8.0),
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.sunny,
+                        color: AppColors.primary,
                       ),
-                      onPressed: () {
-                        // Handle bookmark action
-                      },
+                      title: Text('Word $index',
+                          style: AppTypography.poppins10W400.copyWith(
+                            fontSize: AppSizes.font_16,
+                            color: AppColors.grayDark,
+                            fontWeight: FontWeight.bold,
+                          )),
+                      trailing: IconButton(
+                        icon: Icon(
+                          Icons.bookmark_border,
+                          size: AppSizes.font_18,
+                        ),
+                        onPressed: () {
+                          // Handle bookmark action
+                        },
+                      ),
                     ),
                   ),
                 );
